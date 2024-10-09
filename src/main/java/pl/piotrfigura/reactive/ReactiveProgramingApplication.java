@@ -8,7 +8,7 @@ import pl.piotrfigura.reactive.s01.subscriber.SubscriberImpl;
 public class ReactiveProgramingApplication {
 
     public static void main(String[] args) throws InterruptedException {
-        demo2();
+        demo4();
     }
 
     public static void demo1() {
@@ -36,8 +36,7 @@ public class ReactiveProgramingApplication {
         publisher.subscribe(subscriber);
         subscriber.getSubscription().request(3);
         Thread.sleep(Duration.ofSeconds(2));
-        subscriber.getSubscription().cancel();
-        Thread.sleep(Duration.ofSeconds(2));
+        subscriber.getSubscription().cancel(); ///cancel
         subscriber.getSubscription().request(3);
         Thread.sleep(Duration.ofSeconds(2));
         subscriber.getSubscription().request(3);
@@ -47,7 +46,7 @@ public class ReactiveProgramingApplication {
         var publisher = new PublisherImpl();
         var subscriber = new SubscriberImpl();
         publisher.subscribe(subscriber);
-        subscriber.getSubscription().request(3);
+        subscriber.getSubscription().request(8);
         Thread.sleep(Duration.ofSeconds(2));
         subscriber.getSubscription().request(31);
         Thread.sleep(Duration.ofSeconds(2));
