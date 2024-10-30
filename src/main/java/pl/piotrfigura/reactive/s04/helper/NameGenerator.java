@@ -10,7 +10,8 @@ public class NameGenerator implements Consumer<FluxSink<String>> {
 
     @Override
     public void accept(FluxSink<String> stringFluxSink) {
-    this.sink = stringFluxSink;
+        System.out.println("got a flux sink");
+        this.sink = stringFluxSink;
     }
 
     public void generate(){
